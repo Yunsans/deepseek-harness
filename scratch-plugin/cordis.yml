@@ -1,0 +1,11 @@
+- insert:
+    - id: office-eval
+      name: '/Users/duyuntao.1/Desktop/deepseek-harness/scratch-plugin/src/office-eval-plugin.ts'
+      config:
+        auto: false
+        outputDirName: office-eval-results
+        questionCount: 10
+        checkpointCount: 8
+        maxOutputTokens: 12288
+        # 评测模型 JSON 解析失败后的自动重试次数（0-5，默认 2）
+        jsonRetries: 3
