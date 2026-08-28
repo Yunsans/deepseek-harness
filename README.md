@@ -52,6 +52,10 @@ Start with the [development guide](docs/development.md) and [architecture docume
 
 For agents, follow [AGENTS.md](AGENTS.md).
 
+## τ²-bench
+
+To evaluate this repository's agent on τ²-bench, follow [eval/tau2/README.md](eval/tau2/README.md).
+
 ## License
 
 [MIT](LICENSE)

@@ -1,0 +1,6 @@
+# Bilingual-pair consistency record (docs/i18n/README.md): the git blob hash of each
+# side as of the last confirmed-consistent state. Both languages carry equal authority;
+# after editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write .agents/notes/implemented/testing/2026-08-27-tau2-eval-mcp-bridge.md
+2026-08-27-tau2-eval-mcp-bridge.md: f79c1fc36ea850d9af575b5649685406b505809c
+2026-08-27-tau2-eval-mcp-bridge.zh.md: 536ef6f79d060aa71f4bd65d1dc01d4eb6cfa3da

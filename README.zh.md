@@ -73,6 +73,10 @@ pnpm dsh web
 
 面向 agent：请遵循 [AGENTS.md](AGENTS.md)。
 
+## τ²-bench
+
+用本仓库智能体跑 τ²-bench 评测，见 [eval/tau2/README.zh.md](eval/tau2/README.zh.md)。
+
 ## 许可证
 
 [MIT](LICENSE)

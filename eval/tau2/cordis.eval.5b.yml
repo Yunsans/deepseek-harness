@@ -1,0 +1,50 @@
+# Stage 5b: 5a plus todo and in-process spawn subagent.
+# Spawn children share the process composition, so they see mcp__tau2__*.
+
+- id: jsonrpc-base
+  name: '@deepseek-ai/cordis-plugin-include'
+  config:
+    path: ../../examples/jsonrpc-agent/cordis.yml
+    patches:
+      - id: agent-spine
+        name: '@deepseek-ai/dsh-agent-spine-demo'
+        config:
+          includeHarnessIdentity: false
+          includeRuntimeContext: false
+          persona: You are a customer-service agent.
+          dshHome: !!js process.env.DSH_CWD ?? process.cwd()
+          workspaceContext:
+            maxBytes: 65536
+            projectRootMarkers: [AGENTS.md]
+            dshHome: !!js process.env.DSH_CWD ?? process.cwd()
+          skills:
+            enabled: true
+          toolBash:
+            enableRunInBackground: false
+          toolJobs: false
+      - id: bash
+        name: '@deepseek-ai/dsh-bash-local'
+        config:
+          cwd: !!js process.env.DSH_CWD ?? process.cwd()
+          timeoutMs: 300000
+      - id: sessions
+        name: '@deepseek-ai/dsh-session-persistence-jsonl'
+        config:
+          root: !!js process.env.DSH_SESSION_ROOT ?? './.sessions'
+          compression: none
+      - insert:
+          - id: sandbox
+            name: '@deepseek-ai/dsh-sandbox-local'
+          - id: sandbox-policy
+            name: '@deepseek-ai/dsh-sandbox-policy'
+            config:
+              mode: danger-full-access
+              workspaceRoot: !!js process.env.DSH_CWD ?? process.cwd()
+          - id: mcp-tau2
+            name: '@deepseek-ai/dsh-mcp-client'
+            disabled: !!js "!process.env.DSH_TAU2_MCP_URL"
+            config:
+              serverName: tau2
+              transport: streamable-http
+              url: !!js process.env.DSH_TAU2_MCP_URL ?? 'http://127.0.0.1:1/mcp'
+              failOnStartupError: true

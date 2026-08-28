@@ -1,0 +1,6 @@
+# Bilingual-pair consistency record (docs/i18n/README.md): the git blob hash of each
+# side as of the last confirmed-consistent state. Both languages carry equal authority;
+# after editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write .agents/notes/implemented/testing/2026-08-27-tau2-eval-full-ablation-layers.md
+2026-08-27-tau2-eval-full-ablation-layers.md: 91fca4e58c6193141a775f942f1bfe2fe0cb1cda
+2026-08-27-tau2-eval-full-ablation-layers.zh.md: e9153aef4bd745aa268df8a570417ebd3bb8acd3

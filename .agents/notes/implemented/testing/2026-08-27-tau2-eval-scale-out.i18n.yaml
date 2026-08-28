@@ -1,0 +1,6 @@
+# Bilingual-pair consistency record (docs/i18n/README.md): the git blob hash of each
+# side as of the last confirmed-consistent state. Both languages carry equal authority;
+# after editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write .agents/notes/implemented/testing/2026-08-27-tau2-eval-scale-out.md
+2026-08-27-tau2-eval-scale-out.md: eeb5898f0dfd1d275efad5bd9539a4d3b6198b04
+2026-08-27-tau2-eval-scale-out.zh.md: 5f0f9c94155b7e8e5e990b7f0782b31c7be06d78
